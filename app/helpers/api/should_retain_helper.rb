@@ -1,0 +1,2 @@
+module Api::ShouldRetainHelper
+end

@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-12">
+    <p style="color: green"><%= notice %></p>
+
+    <%= ShouldRetainService.verify('Ultra', "2022/12/31") %>
+
+    <h1>Plans</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Daily Retention</th>
+          <th scope="col">Monthly Retention</th>
+          <th scope="col">Annual Retention</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @plans.each do |plan| %>
+          <tr>
+            <th scope="row"><%= plan.id %></th>
+            <td><%= plan.name %></td>
+            <td><%= plan.daily_retention %></td>
+            <td><%= plan.monthly_retention %></td>
+            <td><%= plan.annual_retention %></td>
+            <td><%= link_to "Show this plan", plan %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to "New plan", new_plan_path, class: 'btn btn-success' %>
+  </div>
+</div>
